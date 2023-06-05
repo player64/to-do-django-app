@@ -22,7 +22,7 @@ class UserLoginTest(APITestCase):
 
     def test_api_login_with_wrong_password(self):
         self.userModel.objects.create_user(email='test@test1.com', password='password', name='test tester')
-        response = self.client.post('/api/v1/users/login/', {
+        response = self.client.post(reverse('user-login'), {
             'email': 'test@test1.com',
             'password': 'test_password'
         })
@@ -72,7 +72,7 @@ class UserLoginTest(APITestCase):
 
     def _authenticate(self):
         self.userModel.objects.create_user(email='email@email.com', password='password', name='test tester')
-        response = self.client.post('/api/v1/users/login/', {
+        response = self.client.post(reverse('user-login'), {
             'email': 'email@email.com',
             'password': 'password'
         }, follow=True)

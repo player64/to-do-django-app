@@ -18,5 +18,8 @@ class Task(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=5, choices=STATUS_CHOICES, default='TODO')
 
+    class Meta:
+        ordering = ["status", "-created_date"]
+
     def __str__(self):
         return self.title

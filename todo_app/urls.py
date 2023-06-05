@@ -22,7 +22,7 @@ from task import urls as task_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/users/', include(user_urls), name='users'),
+    path('api/v1/user/', include(user_urls), name='users'),
     path('api/v1/task/', include(task_urls), name='task'),
     path('api/v1/protected/', views.ProtectedView.as_view(), name='protected-view'),
 ]

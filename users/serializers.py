@@ -1,14 +1,6 @@
 import string
-
-from django.db import transaction
 from rest_framework import serializers
 from .models import User
-
-
-# class UserSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = User
-#         fields = ['pk', 'username', 'email']
 
 
 class UserRegisterSerializer(serializers.ModelSerializer):
